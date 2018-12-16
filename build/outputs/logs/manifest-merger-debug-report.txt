@@ -1,27 +1,27 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml:2:1-4:35
-INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml:2:1-4:35
-INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml:2:1-4:35
+ADDED from D:\merge\Compress\src\main\AndroidManifest.xml:2:1-4:35
+INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml:2:1-4:35
+INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml:2:1-4:35
 	package
-		ADDED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml:3:5-44
-		INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
+		ADDED from D:\merge\Compress\src\main\AndroidManifest.xml:3:5-44
+		INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
+		INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\merge\Compress\src\main\AndroidManifest.xml:2:11-69
 	android:allowBackup
-		ADDED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml:4:5-32
+		ADDED from D:\merge\Compress\src\main\AndroidManifest.xml:4:5-32
 uses-sdk
-INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
+INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
+INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
+INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
+INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
+		INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
+		ADDED from D:\merge\Compress\src\main\AndroidManifest.xml
+		INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Saeed Mozaffari\AndroidStudioProjects\iGap-New\compress\src\main\AndroidManifest.xml
+		INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
+		ADDED from D:\merge\Compress\src\main\AndroidManifest.xml
+		INJECTED from D:\merge\Compress\src\main\AndroidManifest.xml
