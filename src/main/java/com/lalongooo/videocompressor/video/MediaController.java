@@ -260,8 +260,8 @@ import java.nio.ByteBuffer;
 
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         retriever.setDataSource(path);
-        String width = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
-        String height = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
+        String width = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
+        String height = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
         String rotation = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION);
 
         int videoWidth = 641;
@@ -286,7 +286,14 @@ import java.nio.ByteBuffer;
         int resultWidth;
         int resultHeight;
 
-        if (videoWidth * videoHeight < 307200) {
+        int rotationValue = Integer.valueOf(rotation);
+        int originalWidth = Integer.valueOf(width);
+        int originalHeight = Integer.valueOf(height);
+
+        int bitrate = 921600; //450000;
+        int rotateRender = 0;
+
+        if (originalWidth * originalHeight < 307200) {
             //resultWidth = videoWidth;
             //resultHeight = videoHeight;
 
@@ -297,16 +304,28 @@ import java.nio.ByteBuffer;
             }
             return true;
         } else {
-            resultWidth = 640;
-            resultHeight = 360;
+            if (originalHeight > originalWidth) {
+                resultWidth = 360;
+                resultHeight = 640;
+
+                float targetRatio = (float) originalWidth / originalHeight;
+                if (targetRatio > 0) {
+                    resultWidth = (int) (resultHeight * targetRatio);
+                }
+
+            } else if (originalWidth > originalHeight) {
+                resultWidth = 640;
+                resultHeight = 360;
+
+                float targetRatio = (float) originalHeight / originalWidth;
+                if (targetRatio > 0) {
+                    resultHeight = (int) (resultWidth * targetRatio);
+                }
+            } else {
+                resultWidth = 640;
+                resultHeight = 640;
+            }
         }
-
-        int rotationValue = Integer.valueOf(rotation);
-        int originalWidth = Integer.valueOf(width);
-        int originalHeight = Integer.valueOf(height);
-
-        int bitrate = 921600; //450000;
-        int rotateRender = 0;
 
         File cacheFile = new File(savePath);
         //                Environment.getExternalStorageDirectory()
@@ -316,7 +335,7 @@ import java.nio.ByteBuffer;
         //                "VIDEO_" + new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date()) + ".mp4"
         //        );
 
-        if (Build.VERSION.SDK_INT < 18 && resultHeight > resultWidth && resultWidth != originalWidth && resultHeight != originalHeight) {
+        if (Build.VERSION.SDK_INT < 18 && originalHeight > originalWidth && resultWidth != originalWidth && resultHeight != originalHeight) {
             int temp = resultHeight;
             resultHeight = resultWidth;
             resultWidth = temp;
