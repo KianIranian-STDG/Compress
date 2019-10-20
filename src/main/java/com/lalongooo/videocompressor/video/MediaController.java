@@ -662,7 +662,7 @@ import java.nio.ByteBuffer;
                                                         long p = info.presentationTimeUs / 1000;
                                                         long percent = ((p * 100) / mEndTime);
 
-                                                        if (onPercentCompress != null) onPercentCompress.compress(percent, savePath);
+                                                        if (onPercentCompress != null) onPercentCompress.onProgress(percent);
                                                     } else {
                                                         int inputBufIndex = encoder.dequeueInputBuffer(TIMEOUT_USEC);
                                                         if (inputBufIndex >= 0) {
@@ -767,7 +767,7 @@ import java.nio.ByteBuffer;
     }
 
     public interface OnPercentCompress {
-        void compress(long percent, String path);
+        void onProgress(long percent);
     }
 
 }
