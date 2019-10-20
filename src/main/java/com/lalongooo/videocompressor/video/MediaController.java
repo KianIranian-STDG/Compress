@@ -31,7 +31,6 @@ import java.nio.ByteBuffer;
     private final static int PROCESSOR_TYPE_TI = 5;
     private static volatile MediaController Instance = null;
     private boolean videoConvertFirstWrite = true;
-    public static OnPercentCompress onPercentCompress;
 
     public static MediaController getInstance() {
         MediaController localInstance = Instance;
@@ -256,7 +255,7 @@ import java.nio.ByteBuffer;
     }
 
     @TargetApi(16)
-    public boolean convertVideo(final String path, String savePath, long mEndTime) {
+    public boolean convertVideo(final String path, String savePath, long mEndTime, OnPercentCompress onPercentCompress) {
 
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         retriever.setDataSource(path);
