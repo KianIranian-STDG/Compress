@@ -36,8 +36,8 @@ public class CompressTask extends Thread implements MediaController.OnPercentCom
             endTime = 1;
         }
 
-        MediaController.getInstance().convertVideo(originalPath, newPath, endTime, this);
-        onCompress.onCompressFinish(id);
+        boolean finish = MediaController.getInstance().convertVideo(originalPath, newPath, endTime, this);
+        onCompress.onCompressFinish(id, finish);
     }
 
     @Override
