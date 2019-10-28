@@ -41,7 +41,7 @@ public class CompressTask extends Thread implements MediaController.OnPercentCom
     }
 
     @Override
-    public void onProgress(long percent) {
+    public void onProgress(int percent) {
         onCompress.onCompressProgress(id, percent);
     }
 }

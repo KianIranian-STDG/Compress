@@ -660,7 +660,7 @@ import java.nio.ByteBuffer;
                                                         inputSurface.setPresentationTime(info.presentationTimeUs * 1000);
                                                         inputSurface.swapBuffers();
                                                         long p = info.presentationTimeUs / 1000;
-                                                        long percent = ((p * 100) / mEndTime);
+                                                        int percent = (int) ((p * 100) / mEndTime);
 
                                                         if (onPercentCompress != null) onPercentCompress.onProgress(percent);
                                                     } else {
@@ -767,7 +767,7 @@ import java.nio.ByteBuffer;
     }
 
     public interface OnPercentCompress {
-        void onProgress(long percent);
+        void onProgress(int percent);
     }
 
 }
