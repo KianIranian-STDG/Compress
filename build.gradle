@@ -24,6 +24,10 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
+
+        ndk {
+            moduleName "webp"
+        }
     }
 
     buildTypes {
@@ -32,8 +36,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
 }
 
 dependencies {
     implementation files('libs/isoparser-1.0.6.jar')
+    implementation files('libs/aspectjrt-1.7.3.jar') // Don't remove this lib
+
 }
