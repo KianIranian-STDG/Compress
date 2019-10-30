@@ -10,12 +10,14 @@ public class CompressTask extends Thread implements MediaController.OnPercentCom
     private String originalPath;
     private String newPath;
     private OnCompress onCompress;
+    private int progress;
 
     public CompressTask(String id, String originalPath, String newPath, OnCompress onCompress) {
         this.id = id;
         this.originalPath = originalPath;
         this.newPath = newPath;
         this.onCompress = onCompress;
+        this.progress = 0;
     }
 
     @Override
@@ -41,7 +43,12 @@ public class CompressTask extends Thread implements MediaController.OnPercentCom
     }
 
     @Override
-    public void onProgress(int percent) {
-        onCompress.onCompressProgress(id, percent);
+    public void onProgress(int progress) {
+        this.progress = progress;
+        onCompress.onCompressProgress(id, progress);
+    }
+
+    public int getProgress() {
+        return progress;
     }
 }
