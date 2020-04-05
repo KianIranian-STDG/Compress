@@ -308,8 +308,10 @@ import java.nio.ByteBuffer;
                 resultHeight = 640;
 
                 float targetRatio = (float) originalWidth / originalHeight;
+
                 if (targetRatio > 0) {
-                    resultWidth = (int) (resultHeight * targetRatio);
+                    resultWidth = Math.round(originalWidth * targetRatio / 2) * 2;
+                    resultHeight = Math.round(originalHeight * targetRatio / 2) * 2;
                 }
 
             } else if (originalWidth > originalHeight) {
